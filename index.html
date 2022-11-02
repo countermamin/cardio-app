@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="shortcut icon" type="image/png" href="/icon.png" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+            integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+            crossorigin=""
+        />
+        <script
+            defer
+            src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+            integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+            crossorigin=""
+        ></script>
+        <script defer src="script.js"></script>
+        <title>Кардио - Карта Твоих Тренировок</title>
+    </head>
+    <body>
+        <div class="sidebar">
+            <img src="/icon.png" alt="icon" class="icon" />
+
+            <ul class="workouts">
+                <form class="form hidden">
+                    <div class="form__row">
+                        <label class="form__label">Тип</label>
+                        <select class="form__input form__input--type">
+                            <option value="running">Пробежка</option>
+                            <option value="cycling">Велосипед</option>
+                        </select>
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Расстояние</label>
+                        <input
+                            class="form__input form__input--distance"
+                            placeholder="km"
+                        />
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Длительность</label>
+                        <input
+                            class="form__input form__input--duration"
+                            placeholder="мин"
+                        />
+                    </div>
+                    <div class="form__row">
+                        <label class="form__label">Темп</label>
+                        <input
+                            class="form__input form__input--temp"
+                            placeholder="шаг/мин"
+                        />
+                    </div>
+                    <div class="form__row form__row--hidden">
+                        <label class="form__label">Подъём</label>
+                        <input
+                            class="form__input form__input--climb"
+                            placeholder="метров"
+                        />
+                    </div>
+                    <button class="form__btn">OK</button>
+                </form>
+
+                <!-- <li class="workout workout--running" data-id="1234567890">
+          <h2 class="workout__title">Пробежка 15.05.2021</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🏃</span>
+            <span class="workout__value">5.0</span>
+            <span class="workout__unit">км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">21</span>
+            <span class="workout__unit">мин</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">📏⏱</span>
+            <span class="workout__value">238</span>
+            <span class="workout__unit">мин/км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">👟⏱</span>
+            <span class="workout__value">340</span>
+            <span class="workout__unit">шаг/мин</span>
+          </div>
+        </li>
+
+        <li class="workout workout--cycling" data-id="1234567891">
+          <h2 class="workout__title">Велотренировка 07.05.2021</h2>
+          <div class="workout__details">
+            <span class="workout__icon">🚵‍♂️</span>
+            <span class="workout__value">25</span>
+            <span class="workout__unit">км</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">⏱</span>
+            <span class="workout__value">91</span>
+            <span class="workout__unit">мин</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">📏⏱</span>
+            <span class="workout__value">17</span>
+            <span class="workout__unit">км/ч</span>
+          </div>
+          <div class="workout__details">
+            <span class="workout__icon">🏔</span>
+            <span class="workout__value">251</span>
+            <span class="workout__unit">м</span>
+          </div>
+        </li> -->
+            </ul>
+
+            <p class="footer__copyright">
+                НЕ ТЕРЯЙ ВРЕМЯ И СТРОЙ СВОЕ БУДУЩЕЕ СЕЙЧАС
+            </p>
+            <p class="footer__copyright">
+                &copy;
+                <a
+                    class="footer__link masters-of-code-link"
+                    target="_blank"
+                    href="#"
+                    >Cardio App</a
+                >.
+            </p>
+        </div>
+
+        <div id="map"></div>
+    </body>
+</html>
